@@ -11,3 +11,4 @@ A social network system for I2IT
 - Run `php artisan key:generate`
 - Run `php artisan migrate`
 - Run `php artisan serve` to serve for testing
+- Goto *register* page and create a user
