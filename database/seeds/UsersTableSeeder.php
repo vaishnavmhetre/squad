@@ -14,5 +14,7 @@ class UsersTableSeeder extends Seeder
         factory(\App\User::class)->create([
             'email' => 'mhetrevaishnav0@gmail.com'
         ]);
+
+        factory(\App\User::class, 9)->create();
     }
 }

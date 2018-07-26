@@ -41,7 +41,7 @@
                                 <p class="float-left">{{$post->description}}
 
                                     <small>
-                                        <a href="{{route('posts.show', [$post->id])}}">Show more...</a>
+                                        <a href="{{$post->link()}}">Show more...</a>
                                     </small>
                                 </p>
                             </div>
