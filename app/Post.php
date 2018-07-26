@@ -11,4 +11,13 @@ class Post extends Model
     public function creator(){
         return $this->belongsTo(User::class, 'user_id');
     }
+
+    public function comments(){
+        return $this->hasMany(Comment::class);
+    }
+
+    public function link(){
+        return route('posts.show', ['post_id' => $this->id]);
+    }
+
 }
