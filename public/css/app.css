@@ -10479,3 +10479,30 @@ body {
   padding-bottom: 100px;
 }
 
+#post-instance:hover {
+  cursor: pointer;
+  -webkit-box-shadow: 0 0 4px #cfcfcf;
+  box-shadow: 0 0 4px #cfcfcf;
+}
+
+@media (max-width: 1199.98px) {
+  .card-columns {
+    -webkit-column-count: 1;
+            column-count: 1;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  .card-columns {
+    -webkit-column-count: 2;
+            column-count: 2;
+  }
+}
+
+@media (min-width: 1200px) {
+  .card-columns {
+    -webkit-column-count: 3;
+            column-count: 3;
+  }
+}
+

@@ -8,6 +8,6 @@ $factory->define(App\Post::class, function (Faker $faker) {
         'user_id' =>
             \App\User::first() == null
                 ? factory(\App\User::class)->create()->id
-                : \App\User::first()->id
+                : \App\User::all()->random(1)[0]->id
     ];
 });

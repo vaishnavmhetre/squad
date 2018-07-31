@@ -1,10 +1,7 @@
-
 // Fonts
 @import url('https://fonts.googleapis.com/css?family=Nunito');
-
 // Variables
 @import 'variables';
-
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
 
@@ -13,6 +10,25 @@
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
 }
 
-body{
+body {
   padding-bottom: 100px;
+}
+
+#post-instance:hover {
+  cursor: pointer;
+  -webkit-box-shadow: 0 0 4px #cfcfcf;
+  -moz-box-shadow: 0 0 4px #cfcfcf;
+  box-shadow: 0 0 4px #cfcfcf;
+}
+
+.card-columns {
+  @include media-breakpoint-down(lg) {
+    column-count: 1;
+  }
+  @include media-breakpoint-only(lg) {
+    column-count: 2;
+  }
+  @include media-breakpoint-only(xl) {
+    column-count: 3;
+  }
 }

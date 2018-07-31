@@ -3,55 +3,46 @@
 @section('content')
     <div class="container">
         <div class="row justify-content-center">
-            <div class="col-md-8">
+            <div class="col-md-12">
                 <div class="card">
-                    <div class="card-header">
-                        <div class="row justify-content-between">
-                            <div class="col-6 text-left mt-2">
-                                <h5>Recent Posts</h5>
-                            </div>
-                            <div class="col-6 text-right">
-                                <a href="{{route('posts.create')}}" class="btn btn-link">
-                                    <i class="fas fa-plus"></i>
-                                </a>
-                            </div>
+                    <div class="card-body p-2 pl-3 pr-3">
+                        <div class="mt-2">
+                                <span>
+                                    <span class="h5">Recent Posts</span>
+                                    <a href="{{route('posts.create')}}" class="btn btn-link pt-1">
+                                        <i class="fas fa-plus"></i>
+                                    </a>
+                                </span>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="row justify-content-center">
-            <div class="col-md-8">
-                @forelse($posts as $post)
-                    <a href="blah#">
-                        <div class="card mt-4">
-                            <div class="card-header">
-                            <span class="float-left">
-                                <a href="#">
-                                    {{$post->creator->name}}
-                                </a>
-                            </span>
-                                <span class="float-right text-muted">
-                                <small>
-                                    {{$post->created_at->diffForHumans()}}
-                                </small>
-                            </span>
-                            </div>
-                            <div class="card-body pb-2">
-                                <p class="float-left">{{$post->description}}
-
-                                    <small>
-                                        <a href="{{$post->link()}}">Show more...</a>
+        <div class="row justify-content-center mt-3">
+            <div class="col-md-12">
+                @if(count($posts->toArray()) > 0)
+                    <div class="card-columns">
+                        @foreach($posts as $post)
+                            <div class="card mt-2" onclick="window.location = '{{$post->link()}}'" id="post-instance">
+                                <div class="card-body p">
+                                    <p>{{$post->description}}</p>
+                                </div>
+                                <div class="card-footer clearfix">
+                                    <a href="#" class="float-left">
+                                        {{$post->creator->name}}
+                                    </a>
+                                    <small class="float-right text-muted" style="margin-top: 3px;">
+                                        {{$post->created_at->diffForHumans()}}
                                     </small>
-                                </p>
+                                </div>
                             </div>
-                        </div>
-                    </a>
-                @empty
-                    <div class="well text-muted text-center mt-4">
-                        We have no posts for now :(
+                        @endforeach
                     </div>
-                @endforelse
+                @else
+                    <div class=" col-md-12 text-muted text-center h4 mt-4">
+                        We have no posts for you right now :(
+                    </div>
+                @endif
             </div>
         </div>
     </div>
